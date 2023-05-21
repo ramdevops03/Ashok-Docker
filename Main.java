@@ -4,11 +4,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.net.InetSocketAddress;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create();
-        server.bind(null, 8080);
+        server.bind(new InetSocketAddress("localhost", 8080), 0);
         server.createContext("/", Main::handleRequest);
         server.start();
         System.out.println("Server started on port 8080");
