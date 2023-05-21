@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 public class Main {
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create();
-        server.bind(new InetSocketAddress("localhost", 8080), 0);
+        server.bind(new InetSocketAddress("54.221.86.103", 8080), 0);
         server.createContext("/", Main::handleRequest);
         server.start();
         System.out.println("Server started on port 8080");
